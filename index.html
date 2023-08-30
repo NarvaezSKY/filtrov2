@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro</title>
+    <link rel="stylesheet" href="/proyectoFiltro/style/style.css">
+</head>
+<body>
+    <center>
+    <div id="container-search">
+        <h1 style="color: rgb(255, 255, 255)">Encuentra tu Ruta</h1>
+        <hr style="width: 100%;">
+        
+<div class="contenedorSelect">
+        <select name="nombre" id="nombre" class="selectytal">
+            <option value="Default" disabled selected>Seleccionar nombre...</option>
+          
+
+        </select>
+        <select name="minkm" id="minkm" class="selectytal">
+            <option value="Default" disabled selected>Seleccionar kilometros minimos...</option>
+
+        </select>
+        <select name="maxkm" id="maxkm" class="selectytal">
+            <option value="Default" disabled selected>Seleccionar kilometros maximos...</option>
+
+        </select>
+        <select name="estado" id="estado" class="selectytal">
+            <option value="Default" disabled selected>Seleccionar estado...</option>
+            <option value="Realizada">Realizada</option>
+            <option value="Pendiente">Pendiente</option>
+
+        </select>
+        <select name="calificacion" id="calificacion" class="selectytal">
+            <option value="Default" disabled selected>Seleccionar calificación...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            
+
+        </select>
+        <select name="tipovia" id="tipovia" class="selectytal">
+            <option value="Default" disabled selected>Seleccionar tipo de vía...</option>
+            <option value="Trocha">Trocha</option>
+            <option value="Asfalto">Asfalto</option>
+
+        </select>
+    </div>
+  
+    </div>
+<h1 style="color: aliceblue;">Resultado de la busqueda:</h1>
+    <div id="resultado"></div>
+</center>
+
+    <script src="/proyectoFiltro/modules/db.js" type="module"></script>
+    <script src="/proyectoFiltro/js/main.js" type="module"></script>
+    <!-- <script src="/proyectoFiltro/js/pruebas.js" type="module"></script> -->
+</body>
+</html>
