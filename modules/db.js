@@ -44,7 +44,6 @@ export const rutas = [
       calificacion: 4,
       tipoVia: "Trocha"
     },
-    // ... y aquí empiezan las 5 rutas adicionales
     {
       id: 6,
       nombre: "Ruta de los Cañones del Chicamocha",
@@ -90,7 +89,6 @@ export const rutas = [
       calificacion: 5,
       tipoVia: "Trocha"
     },
-    // ... y aquí empiezan las siguientes 5 rutas
     {
       id: 11,
       nombre: "Sendero de las Cataratas",

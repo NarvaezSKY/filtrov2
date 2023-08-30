@@ -22,12 +22,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
         nombreRuta.appendChild(opcNombre)
 
         let opcMaxKm=document.createElement('option')
-        opcMaxKm.value=element
+        opcMaxKm.value=element.maxKilometros
         opcMaxKm.textContent=element.maxKilometros
+       
         maxKm.appendChild(opcMaxKm)
 
         let opcMinKm=document.createElement('option')
-        opcMinKm.value=element
+        opcMinKm.value=element.minKilometros
         opcMinKm.textContent=element.minKilometros
         minKm.appendChild(opcMinKm)
     });
@@ -45,8 +46,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             <b class="textoRuta">Tipo de vía: </b> ${element.tipoVia}`
 
             resultadoBusqueda.appendChild(divElemento)
-
-       
         }) 
     }
 
@@ -67,11 +66,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
         console.table(filtro)
         filtrarTipo()
     })
+    minKm.addEventListener('change', (e)=>{
+        console.log(e.target.value)
+        filtro.minKilometros=parseInt(e.target.value)
+        console.table(filtro)
+        filtrarTipo()
+    })
+    maxKm.addEventListener('change', (e)=>{
+        filtro.maxKilometros=parseInt(e.target.value)
+        console.table(filtro)
+        filtrarTipo()
+    })
     estadoRuta.addEventListener('change', (e)=>{
         filtro.estado=e.target.value
         console.table(filtro) 
         filtrarTipo()
-        
     })
     calificacionRuta.addEventListener('change', (e)=>{
         filtro.calificacion=parseInt(e.target.value)
@@ -91,6 +100,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         limpiarHTML()
         rutas.forEach((element)=>{
             const variables=(element.nombre===filtro.nombre ||filtro.nombre==="") && 
+            (element.minKilometros===filtro.minKilometros ||filtro.minKilometros==="")&&
+            (element.maxKilometros===filtro.maxKilometros ||filtro.maxKilometros==="")&&
             (element.estado===filtro.estado || filtro.estado==="") && 
             (element.calificacion===filtro.calificacion || filtro.calificacion==="") && 
             (element.tipoVia===filtro.tipoVia || filtro.tipoVia==="")
@@ -109,8 +120,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     <b class="textoRuta">Tipo de vía: </b> ${element.tipoVia}`
         
                     resultadoBusqueda.appendChild(divElemento) 
-                }
-              
+                }   
         })
     }
 
@@ -196,7 +206,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function limpiarHTML(){
         resultadoBusqueda.innerHTML=""
     }
-
-
 })
-
