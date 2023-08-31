@@ -1,4 +1,4 @@
-import { rutas } from "/proyectoFiltro/modules/db.js";
+import { rutas } from "/modules/db.js";
 
 document.addEventListener('DOMContentLoaded', ()=>{
 
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         limpiarHTML()
         rutas.forEach((element)=>{
             const variables=(element.nombre===filtro.nombre ||filtro.nombre==="") && 
-            (element.minKilometros===filtro.minKilometros ||filtro.minKilometros==="")&&
-            (element.maxKilometros===filtro.maxKilometros ||filtro.maxKilometros==="")&&
+            (element.minKilometros>=filtro.minKilometros ||filtro.minKilometros==="")&&
+            (element.maxKilometros<=filtro.maxKilometros ||filtro.maxKilometros==="")&&
             (element.estado===filtro.estado || filtro.estado==="") && 
             (element.calificacion===filtro.calificacion || filtro.calificacion==="") && 
             (element.tipoVia===filtro.tipoVia || filtro.tipoVia==="")
@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     <b class="textoRuta">Tipo de vía: </b> ${element.tipoVia}`
         
                     resultadoBusqueda.appendChild(divElemento) 
-                }   
+                }
+        
         })
     }
 
